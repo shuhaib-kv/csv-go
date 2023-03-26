@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSV Data</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 5px;
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				{{range .headers}}
+				<th>{{.}}</th>
+				{{end}}
+			</tr>
+		</thead>
+		<tbody>
+			{{range .rows}}
+			<tr>
+				{{range .}}
+				<td>{{.}}</td>
+				{{end}}
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
+</body>
+</html>
